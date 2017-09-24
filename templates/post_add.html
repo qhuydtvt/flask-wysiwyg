@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container mt-3">
+  <div class="row">
+    <form class="new-post" enctype="multipart/form-data" action="{{ url_for('add_post') }}" method="post">
+      <div class="clearfix">
+        <button class="btn btn-primary mb-2 float-right" type="sumit" name="button">Đăng bài</button>
+      </div>
+      <div class="form-group">
+        <label for="input_title">Title</label>
+        <input class="form-control" type="text" name="" value="" id="input_title" required>
+      </div>
+      <div class="form-group">
+        <label for="">Content</label>
+        <textarea class="wysiwyg form-control" name="content" rows="8" cols="80"></textarea>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+  CKEDITOR.replace("new-post-content");
+})
+</script>
+
+{% endblock %}
